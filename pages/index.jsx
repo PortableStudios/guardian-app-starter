@@ -4,8 +4,8 @@ import axios from 'axios';
 const IndexPage = () => {
   const [term, setTerm] = useState('');
   const [results, setResults] = useState([]);
-  
-  const doSearch = async() => {
+
+  const doSearch = async () => {
     const resultSet = await axios.get('/api/search', {
       params: {
         term: term
@@ -13,7 +13,7 @@ const IndexPage = () => {
     })
     setResults(resultSet.data);
   }
-  
+
   return (
     <div>
       <h1>Guardian Search</h1>
@@ -26,7 +26,7 @@ const IndexPage = () => {
       <div>
         <h2>Results</h2>
         <ul>
-          { results.map(result => {
+          {results.map(result => {
             return <li><a href={result.url}>{result.title}</a></li>
           })}
         </ul>

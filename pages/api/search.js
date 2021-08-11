@@ -1,9 +1,10 @@
 import axios from 'axios';
 
-const searchHandler = async(req, res) => {
+const searchHandler = async (req, res) => {
 
   const searchResults = await axios.get('https://content.guardianapis.com/search', {
     params: {
+      'q': req.query.term,
       'api-key': process.env.GUARDIAN_API_KEY,
     }
   })
