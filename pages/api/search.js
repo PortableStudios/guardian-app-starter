@@ -13,6 +13,7 @@ const searchHandler = async (req, res) => {
     return {
       title: result.webTitle,
       url: result.webUrl,
+      section: result.sectionName
     }
   })
 
