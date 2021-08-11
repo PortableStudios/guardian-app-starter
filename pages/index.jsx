@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import searchInput from '../components/ui/search';
-import resultsMap from '../components/ui/results';
+import SearchInput from '../components/ui/search';
+import ResultsMap from '../components/ui/results';
 import styles from '../styles.module.css'
 
 const IndexPage = () => {
@@ -20,8 +20,8 @@ const IndexPage = () => {
   return (
     <div className={styles.main}>
       <h1>Guardian Search</h1>
-      {searchInput(term, setTerm, doSearch)}
-      {resultsMap(results)}
+      <SearchInput term={term} setTerm={setTerm} doSearch={doSearch} />
+      <ResultsMap results={results} />
     </div>
   )
 }
