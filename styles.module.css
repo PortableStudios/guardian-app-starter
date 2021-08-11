@@ -1,0 +1,40 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: #979dac;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.search button {
+  border: none;
+  border-radius: 20px;
+  background-color: #0466c8;
+  margin-left: 10px;
+  color: white;
+}
+
+.search input {
+  border: none;
+  border-radius: 20px;
+}
+
+.resultsContainer {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;  gap: 10px;
+  list-style: none;
+  font-size: large;
+}
+
+.h2 {
+  text-align: center;
+}
