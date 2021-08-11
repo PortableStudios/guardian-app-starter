@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import searchInput from '../components/ui/search';
+import resultsMap from '../components/ui/results';
+
 
 const IndexPage = () => {
   const [term, setTerm] = useState('');
@@ -17,20 +20,8 @@ const IndexPage = () => {
   return (
     <div>
       <h1>Guardian Search</h1>
-      <div>
-        <input
-          value={term}
-          onChange={(evt) => setTerm(evt.target.value)} />
-        <button onClick={() => doSearch()}>Search</button>
-      </div>
-      <div>
-        <h2>Results</h2>
-        <ul>
-          {results.map(result => {
-            return <li><a href={result.url}>{result.title}</a></li>
-          })}
-        </ul>
-      </div>
+      {searchInput(term, setTerm, doSearch)}
+      {resultsMap(results)}
     </div>
   )
 }
