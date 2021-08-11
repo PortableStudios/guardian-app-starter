@@ -9,12 +9,14 @@ const IndexPage = () => {
   const [results, setResults] = useState([]);
 
   const doSearch = async () => {
-    const resultSet = await axios.get('/api/search', {
-      params: {
-        term: term
-      }
-    })
-    setResults(resultSet.data);
+    if (term !== '') {
+      const resultSet = await axios.get('/api/search', {
+        params: {
+          term: term
+        }
+      })
+      setResults(resultSet.data);
+    }
   }
 
   return (
